@@ -253,7 +253,7 @@ def main():
 
     # Data / splits
     p.add_argument("--manifest", required=True)
-    p.add_argument("--target", choices=["isup3", "isup6", "binary_low_high", "binary_all"], default="isup3")
+    p.add_argument("--target", choices=["isup3", "isupc3", "isup6", "binary_low_high", "binary_all"], default="isup3")
     p.add_argument("--folds_train", default="1,2,3")
     p.add_argument("--folds_val", default="0")
     p.add_argument("--folds_test", default="4")

@@ -8,18 +8,18 @@ set -euo pipefail
 # COMMON PATHS
 ###########################################
 
-LOGDIR=/home/ewillis/projects/aip-medilab/ewillis/pca_contrastive/new_SPIE/RESULTS_final/triplet_isup6
+LOGDIR=/home/obed/projects/aip-medilab/obed/pca_contrastive/new_SPIE/RESULTS_final/triplet_isup6_ob
 mkdir -p "$LOGDIR"
 
-TRIPLET_SCRIPT=/home/ewillis/projects/aip-medilab/ewillis/pca_contrastive/new_SPIE/train_triplet_oldSPIE.py
+TRIPLET_SCRIPT=/home/obed/projects/aip-medilab/obed/pca_contrastive/new_SPIE/train_triplet_oldSPIE.py
 
 MANIFEST=/project/aip-medilab/shared/picai/manifests/slices_manifest.csv
-CKPT=/project/aip-medilab/ewillis/pca_contrastive/mri_model_medsam_finetune/work_dir/MedSAM/medsam_vit_b.pth
+CKPT=/datasets/exactvu_pca/checkpoint_store/sam/medsam_vit_b_cpu.pth
 
-OUTDIR_TRIP=/home/ewillis/projects/aip-medilab/ewillis/pca_contrastive/new_SPIE/RESULTS_final/triplet_isup6
+OUTDIR_TRIP=/home/obed/projects/aip-medilab/obed/pca_contrastive/new_SPIE/RESULTS_final/triplet_isup6
 
-HISTO_DIR=/home/ewillis/projects/aip-medilab/shared/picai/histopathology_encodings/UNI2/projected_128D/embeddings_128
-HISTO_MARKSHEET=/home/ewillis/projects/aip-medilab/shared/picai/histopathology_encodings/UNI2_splits
+HISTO_DIR=/home/obed/projects/aip-medilab/shared/picai/histopathology_encodings/UNI2/projected_128D/embeddings_128
+HISTO_MARKSHEET=/home/obed/projects/aip-medilab/shared/picai/histopathology_encodings/UNI2_splits
 
 mkdir -p "$OUTDIR_TRIP"
 

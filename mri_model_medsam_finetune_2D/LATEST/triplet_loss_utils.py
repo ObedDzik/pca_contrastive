@@ -20,7 +20,7 @@ def get_histo_by_isup(
     provider = 'karolinska'
 ):
     encodings_dir = Path(encodings_dir)
-    df = pd.read_csv(marksheet_csv)
+    df = marksheet_csv
 
     if provider != 'all':
         df = df[df['data_provider'] == provider] # only use one provider to avoid disjoint embedding spaces

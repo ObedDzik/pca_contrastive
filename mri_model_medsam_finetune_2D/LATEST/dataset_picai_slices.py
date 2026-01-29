@@ -37,6 +37,12 @@ def map_isup3(y6: int) -> int:
     if y6 in (4, 5): return 2
     raise ValueError(f"bad label6={y6}")
 
+def map_isupc3(y6: int) -> int:
+    if y6 == 0: return 0
+    if y6 in (1, 2): return 1
+    if y6 in (3, 4, 5): return 2
+    raise ValueError(f"bad label6={y6}")
+
 def map_binary_low_high(y6: int) -> int:
     if y6 in (0, 1): return 0
     if y6 in (4, 5): return 1
@@ -131,7 +137,7 @@ class PicaiSliceDataset(Dataset):
 
         # store config
         self.target = target
-        assert self.target in ("isup3", "isup6", "binary_low_high", "binary_all")
+        assert self.target in ("isup3", "isupc3", "isup6", "binary_low_high", "binary_all")
         self.channels = tuple(channels)
         self.missing_channel_mode = missing_channel_mode
         assert self.missing_channel_mode in ("zeros", "repeat_t2")
@@ -239,6 +245,8 @@ class PicaiSliceDataset(Dataset):
     
         if self.target == "isup3":
             y = map_isup3(y6)
+        elif self.target == "isupc3":
+            y = map_isupc3(y6)
         elif self.target == "binary_low_high":
             y = map_binary_low_high(y6)
         elif self.target == "binary_all":

@@ -10,7 +10,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, WeightedRandomSampler
 
-from dataset_picai_slices import map_binary_all, map_binary_low_high, map_isup3, PicaiSliceDataset
+from dataset_picai_slices import map_binary_all, map_binary_low_high, map_isup3, PicaiSliceDataset, map_isupc3
 from ISUPMedSAM import IMG_SIZE
 
 from sklearn.metrics import (
@@ -62,6 +62,8 @@ def make_pos_sampler(df: pd.DataFrame, pos_ratio: float = 0.33, seed: int = 1337
 def class_weights_from_train(df: pd.DataFrame, target: str, label6_column="merged_ISUP"):
     if target == "isup3":
         y = df[label6_column].map(map_isup3)
+    elif target == "isupc3":
+        y = df[label6_column].map(map_isupc3)
     elif target == "binary_low_high":
         y = df[label6_column].map(map_binary_low_high)
     elif target == "binary_all":

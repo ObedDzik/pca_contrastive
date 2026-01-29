@@ -19,3 +19,11 @@ venv/
 *.pth
 *.pyc
 *.pt
+
+pca_env
+
+mri_model_medsam_finetune_2D/LATEST/debug.sh
+mri_model_medsam_finetune_2D/LATEST/results_isup3_ob
+wandb
+mri_model_medsam_finetune_2D/LATEST/results_isup3/
+mri_model_medsam_finetune_2D/LATEST/submit_ob.sbatch
